@@ -87,6 +87,12 @@ class Tools
 		return isDexMode_jni();
 	}
 
+	public static function getExternalStorageDirectory():String
+	{
+		var getExternalStorageDirectory_jni = JNI.createStaticMethod("org/haxe/extension/Tools", "getExternalStorageDirectory", "()Ljava/lang/String;");
+		return getExternalStorageDirectory_jni();
+	}
+
 	private static var enableAppSecure_jni:Dynamic = JNI.createStaticMethod('org/haxe/extension/Tools', 'enableAppSecure', '()V');
 	private static var disableAppSecure_jni:Dynamic = JNI.createStaticMethod('org/haxe/extension/Tools', 'disableAppSecure', '()V');
 	private static var launchPackage_jni:Dynamic = JNI.createStaticMethod('org/haxe/extension/Tools', 'launchPackage', '(Ljava/lang/String;I)V');
